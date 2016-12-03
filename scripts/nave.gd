@@ -37,5 +37,3 @@ func _ready():
 	if OS.get_name() == "Android": use_accel = true
 	set_angular_damp(5)
 	set_fixed_process(true)
-	
-
