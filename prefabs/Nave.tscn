@@ -1,20 +1,56 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scripts/nave.gd" type="Script" id=1]
-[ext_resource path="res://images/nave 2.png" type="Texture" id=2]
-[ext_resource path="res://sounds/318688__limitsnap-creations__rocket-thrust-effect.smp" type="Sample" id=3]
-[ext_resource path="res://scripts/cohete.gd" type="Script" id=4]
-[ext_resource path="res://prefabs/Gun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://images/palanca.png" type="Texture" id=2]
+[ext_resource path="res://images/palanca2.png" type="Texture" id=3]
+[ext_resource path="res://images/nave 2.png" type="Texture" id=4]
+[ext_resource path="res://sounds/318688__limitsnap-creations__rocket-thrust-effect.smp" type="Sample" id=5]
+[ext_resource path="res://scripts/cohete.gd" type="Script" id=6]
+[ext_resource path="res://prefabs/Gun.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 436.412, 366.142, 462.195, 269.152, 495.343, 366.142 )
 
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 2 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 3 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
 [sub_resource type="SampleLibrary" id=2]
 
 resource/name = "cohete"
-samples/thrust = { "db":-10.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/thrust = { "db":-10.0, "pitch":1.0, "sample":ExtResource( 5 ) }
 
 [node name="Nave" type="RigidBody2D"]
 
@@ -67,14 +103,18 @@ drag_margin/bottom = 0.2
 
 rect/scale = Vector2( 4, 4 )
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 0
 size_flags/vertical = 0
-size_flags/stretch_ratio = 4.0
-margin/left = 916.0
-margin/top = 496.0
-margin/right = 942.0
-margin/bottom = 698.0
+size_flags/stretch_ratio = 0.0
+margin/left = 781.0
+margin/top = 1041.0
+margin/right = 842.0
+margin/bottom = 1243.0
+custom_icons/grabber_hilite = ExtResource( 2 )
+custom_icons/grabber = ExtResource( 2 )
+custom_styles/grabber_hilite = SubResource( 3 )
+custom_styles/slider = SubResource( 4 )
 range/min = 0.25
 range/max = 1.0
 range/step = 0.1
@@ -88,7 +128,7 @@ focus_mode = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
@@ -109,8 +149,8 @@ params/attenuation/distance_exp = 1.0
 config/polyphony = 1
 config/samples = SubResource( 2 )
 config/pitch_random = 0.3
-script/script = ExtResource( 4 )
+script/script = ExtResource( 6 )
 
-[node name="Gun" parent="." instance=ExtResource( 5 )]
+[node name="Gun" parent="." instance=ExtResource( 7 )]
 
 
