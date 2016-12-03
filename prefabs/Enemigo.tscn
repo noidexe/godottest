@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 37.5729, 96.6285 )
+extents = Vector2( 61.6865, 100.769 )
 
 [node name="Enemigo" type="Area2D"]
 
@@ -18,6 +18,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision/layers = 3
+collision/mask = 3
 script/script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,6 +33,8 @@ _update_shape_index = 0
 
 texture = ExtResource( 2 )
 
-[connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
+[connection signal="area_enter" from="." to="." method="_on_Enemigo_enter"]
+
+[connection signal="body_enter" from="." to="." method="_on_Enemigo_enter"]
 
 
