@@ -10,8 +10,7 @@ func _ready():
 	pass
 
 
-func _on_Area2D_body_enter( body ):
-	if(body.get_name() == "Nave" ):
-		var explosion = preload("res://prefabs/Explosion.tscn").instance()
-		get_parent().add_child(explosion)
-		queue_free()
+func _on_Enemigo_enter( body ):
+	var explosion = preload("res://prefabs/Explosion.tscn").instance()
+	get_parent().add_child(explosion)
+	queue_free()
