@@ -1,16 +1,20 @@
 extends Area2D
 
-var speed = 200
+var speed = 400
 onready var sprite = get_node("Sprite")
 onready var collision = get_node("Collision")
-
+var lifetime = 5
 func _ready():
-	activate(200)
 	pass
 
 func _fixed_process(delta):
-	translate(Vector2(0,-delta*200))
-
+	
+	var rotation = get_global_transform().get_rotation(); 
+	var position = get_pos();
+	set_pos(Vector2(position.x-sin(rotation)*speed*delta,position.y-cos(rotation)*speed*delta));	
+	lifetime -=delta;
+	if(lifetime<0):
+		self.queue_free()
 
 func activate(_speed):
 	speed = _speed
