@@ -13,4 +13,5 @@ func _ready():
 func _on_Enemigo_enter( body ):
 	var explosion = preload("res://prefabs/Explosion.tscn").instance()
 	get_parent().add_child(explosion)
+	explosion.set_pos(get_pos())
 	queue_free()
