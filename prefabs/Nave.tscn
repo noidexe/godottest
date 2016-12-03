@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/nave.gd" type="Script" id=1]
-[ext_resource path="res://images/photo.png" type="Texture" id=2]
+[ext_resource path="res://images/nave 2.png" type="Texture" id=2]
 [ext_resource path="res://sounds/318688__limitsnap-creations__rocket-thrust-effect.smp" type="Sample" id=3]
 [ext_resource path="res://scripts/cohete.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 409.19, 362.778, 464.604, 306.651, 519.542, 362.065 )
+points = Vector2Array( 436.412, 366.142, 462.195, 269.152, 495.343, 366.142 )
 
 [sub_resource type="SampleLibrary" id=2]
 
@@ -93,7 +93,7 @@ texture = ExtResource( 2 )
 
 transform/pos = Vector2( -464.697, -331.279 )
 build_mode = 0
-polygon = Vector2Array( 409.19, 362.778, 464.604, 306.651, 519.542, 362.065 )
+polygon = Vector2Array( 436.412, 366.142, 462.195, 269.152, 495.343, 366.142 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
