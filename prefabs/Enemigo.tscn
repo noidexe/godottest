@@ -62,8 +62,6 @@ trigger = true
 
 texture = ExtResource( 2 )
 
-[connection signal="area_enter" from="BodyTrigger" to="." method="_on_Enemigo_enter"]
-
 [connection signal="area_enter" from="BodyTrigger" to="." method="_on_BodyTrigger_area_enter"]
 
 
