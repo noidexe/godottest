@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://prefabs/Enemigo.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemigo" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1440.22, 2036.6 )
+
+[node name="Enemigo6 3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -655.624, 415.673 )
+
+[node name="Enemigo1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 787.143, 300.051 )
+
+[node name="Enemigo6" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1571.74, -1320.88 )
+
+[node name="Enemigo2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -2253.66, 1929.3 )
+
+[node name="Enemigo6 2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1469.06, 308.375 )
+
+[node name="Enemigo3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -2332.44, 307.074 )
+
+[node name="Enemigo6 4" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1547.85, -1313.85 )
+
+[node name="Enemigo4" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 990.8, 1388.56 )
+
+[node name="Enemigo6 5" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1775.4, -232.367 )
+
+[node name="Enemigo5" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 660.736, 2097.85 )
+
+[node name="Enemigo6 6" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1445.33, 476.919 )
+
+
