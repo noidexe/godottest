@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -9,8 +9,7 @@ func _ready():
 	# Initialization here
 	pass
 
-
-func _on_Enemigo_enter( body ):
+func _on_BodyTrigger_area_enter( area ):
 	var explosion = preload("res://prefabs/Explosion.tscn").instance()
 	get_parent().add_child(explosion)
 	explosion.set_pos(get_pos())
