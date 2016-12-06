@@ -16,9 +16,9 @@ func _fixed_process(delta):
 		set_angular_velocity(-ASPEED * 0.2 * Input.get_accelerometer().x)
 	else:
 		if Input.is_action_pressed("move_left"):
-			set_angular_velocity(-ASPEED)
+			set_angular_velocity(-ASPEED * 0.5)
 		elif Input.is_action_pressed("move_right"):
-			set_angular_velocity(ASPEED)
+			set_angular_velocity(ASPEED * 0.5)
 	
 	thrust_value = thrust.get_value()
 	set_linear_velocity( -Vector2( sin(get_rot()) * thrust_value * LSPEED , cos(get_rot()) * thrust_value * LSPEED ) )
