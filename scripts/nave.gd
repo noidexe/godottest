@@ -8,6 +8,7 @@ var use_accel = false
 const ASPEED = 5
 const LSPEED = 1000
 onready var thrust = get_node("Camera2D/Thrust")
+onready var sprite = get_node("Sprite")
 var thrust_value
 
 func _fixed_process(delta):
@@ -21,6 +22,7 @@ func _fixed_process(delta):
 	
 	thrust_value = thrust.get_value()
 	set_linear_velocity( -Vector2( sin(get_rot()) * thrust_value * LSPEED , cos(get_rot()) * thrust_value * LSPEED ) )
+	sprite.set_rot(0 + 0.05 * -get_angular_velocity())
 	
 	#var motion = velocity * delta
 	#motion = move (motion)
