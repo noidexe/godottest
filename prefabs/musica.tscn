@@ -10,7 +10,7 @@
 stream/stream = ExtResource( 1 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 0.0
+stream/volume_db = -0.5
 stream/pitch_scale = 1.0
 stream/tempo_scale = 1.0
 stream/autoplay = true
