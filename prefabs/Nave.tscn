@@ -8,7 +8,7 @@
 [ext_resource path="res://scripts/cohete.gd" type="Script" id=6]
 [ext_resource path="res://prefabs/Gun.tscn" type="PackedScene" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 423.704, 374.188, 462.8, 268.303, 500.267, 372.559 )
@@ -47,21 +47,21 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 423.704, 374.188, 462.8, 268.303, 500.267, 372.559 )
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="SampleLibrary" id=5]
 
-samples/thrust = { "db":-10.0, "pitch":1.0, "sample":ExtResource( 5 ) }
+samples/thrust = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
 
 [node name="Nave" type="RigidBody2D"]
 
 transform/pos = Vector2( 517.924, 321.384 )
 z/z = 1
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -464.697, -331.279 )
 shapes/0/trigger = true
 collision/layers = 0
@@ -85,12 +85,11 @@ script/script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( -1.55829, -775.893 )
+transform/pos = Vector2( 10.1234, -411.026 )
 anchor_mode = 1
 rotating = true
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1.5, 1.5 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -112,10 +111,10 @@ focus/stop_mouse = false
 size_flags/horizontal = 0
 size_flags/vertical = 0
 size_flags/stretch_ratio = 0.0
-margin/left = 781.0
-margin/top = 1041.0
-margin/right = 842.0
-margin/bottom = 1243.0
+margin/left = 513.536
+margin/top = 505.376
+margin/right = 574.536
+margin/bottom = 707.376
 custom_icons/grabber_hilite = ExtResource( 2 )
 custom_icons/grabber = ExtResource( 2 )
 custom_styles/grabber_hilite = SubResource( 2 )
@@ -135,7 +134,7 @@ focus_mode = 0
 
 transform/pos = Vector2( -464.697, -331.279 )
 input/pickable = true
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -156,18 +155,20 @@ trigger = true
 
 texture = ExtResource( 4 )
 
-[node name="cohete" type="SamplePlayer2D" parent="."]
+[node name="snd_cohete" type="SamplePlayer2D" parent="."]
 
-transform/pos = Vector2( 1.49359, 8.8978 )
+transform/pos = Vector2( -1.4469, -3.991 )
 params/volume_db = 0.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
-config/samples = SubResource( 4 )
+config/samples = SubResource( 5 )
 config/pitch_random = 0.3
 script/script = ExtResource( 6 )
+base_pitch_scale = 0.5
+pitch_scale_multiplier = 2.0
 
 [node name="Gun" parent="." instance=ExtResource( 7 )]
 
