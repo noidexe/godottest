@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scripts/Enemigo.gd" type="Script" id=1]
-[ext_resource path="res://images/nave.png" type="Texture" id=2]
+[ext_resource path="res://images/roberto.png" type="Texture" id=2]
+[ext_resource path="res://prefabs/Gun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -11,7 +12,7 @@ points = Vector2Array( -66.7674, 30.8919, -1.78741, -120.728, 59.5826, 32.6969, 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -66.7674, 30.8919, -1.78741, -120.728, 59.5826, 32.6969, 0.0176086, 131.972 )
+points = Vector2Array( -76.8787, -20.4847, 0.662598, -85.7827, 78.2039, -16.4036, -0.697754, 104.67 )
 
 [node name="Enemigo" type="RigidBody2D"]
 
@@ -37,6 +38,8 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
+angular_velocity = 5
+linear_velocity = 500
 
 [node name="BodyTrigger" type="Area2D" parent="."]
 
@@ -54,13 +57,19 @@ collision/mask = 3
 [node name="TriggerShape" type="CollisionPolygon2D" parent="BodyTrigger"]
 
 build_mode = 0
-polygon = Vector2Array( -66.7674, 30.8919, -1.78741, -120.728, 59.5826, 32.6969, 0.0176086, 131.972 )
+polygon = Vector2Array( -76.8787, -20.4847, 0.662598, -85.7827, 78.2039, -16.4036, -0.697754, 104.67 )
 shape_range = Vector2( 0, 0 )
 trigger = true
 
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+flip_v = true
+
+[node name="Gun" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1.36036, -121.073 )
+fireRate = 2.0
 
 [connection signal="area_enter" from="BodyTrigger" to="." method="_on_BodyTrigger_area_enter"]
 
