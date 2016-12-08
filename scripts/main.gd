@@ -24,3 +24,12 @@ func instance_background_tile(x, y):
 
 func _ready():
 	set_process(true)
+
+func _on_Nave_exit_tree():
+	var txtGameOver = get_node("UI/GameOver")
+	txtGameOver.show()
+	txtGameOver.get_node('Timer').start()
+
+
+func _on_GameOver_Timer_timeout():
+	get_tree().change_scene("res://scenes/main.tscn")

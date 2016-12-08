@@ -40,3 +40,10 @@ func _ready():
 	set_angular_damp(5)
 	set_fixed_process(true)
 
+
+
+func _on_BodyTrigger_area_enter( area ):
+	var explosion = preload("res://prefabs/Explosion.tscn").instance()
+	get_parent().add_child(explosion)
+	explosion.set_pos(get_pos())
+	queue_free()
