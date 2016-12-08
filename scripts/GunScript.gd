@@ -24,5 +24,5 @@ func createBullet(position,rotation):
 	get_tree().get_root().add_child(bullet)
 	bullet.set_pos(position)
 	bullet.set_rot(rotation)
-	bullet.activate(1500)
+	bullet.activate(3000)
 	pass
