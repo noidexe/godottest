@@ -1,8 +1,8 @@
 extends Area2D
 
 const asteroid_amount = 400
-const columns = 10
-const rows = 10
+const columns = 2
+const rows = 2
 const width = 1080
 const height = 1920
 const min_distance = 150
