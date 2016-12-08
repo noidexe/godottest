@@ -9,7 +9,7 @@ export var linear_velocity = 500
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	set_angular_velocity( rand_range(0.5 * angular_velocity , angular_velocity ))
+	set_angular_velocity( rand_range(0.8 * angular_velocity , angular_velocity ))
 	set_fixed_process(true)
 
 func _fixed_process(delta):
