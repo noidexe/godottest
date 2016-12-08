@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 var countdown
-var fireRate = 0.2;
+export var fireRate = 0.2;
 func _ready():
 	countdown = fireRate
 	set_fixed_process(true)
