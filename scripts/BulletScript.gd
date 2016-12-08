@@ -3,7 +3,7 @@ extends Area2D
 var speed = 400
 onready var sprite = get_node("Sprite")
 onready var collision = get_node("Collision")
-var lifetime = 5
+var lifetime = 0.5
 func _ready():
 	pass
 
