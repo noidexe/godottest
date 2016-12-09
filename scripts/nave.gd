@@ -7,7 +7,7 @@ extends RigidBody2D
 var use_accel = false
 const ASPEED = 5
 const LSPEED = 1000
-onready var thrust = get_node("Camera2D/Thrust")
+onready var thrust = get_tree().get_root().get_node("Node2D/UI/Thrust")
 onready var sprite = get_node("Sprite")
 var thrust_value
 

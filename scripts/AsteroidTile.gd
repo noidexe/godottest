@@ -1,10 +1,10 @@
 extends Area2D
 
 const asteroid_amount = 400
-const columns = 2
-const rows = 2
-const width = 1080
-const height = 1920
+const columns = 3
+const rows = 3
+const width = 1920
+const height = 1080
 const min_distance = 150
 var texs = []
 

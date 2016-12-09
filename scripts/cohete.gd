@@ -3,7 +3,7 @@ extends SamplePlayer2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-onready var thrust = get_parent().get_node("Camera2D/Thrust")
+onready var thrust = get_tree().get_root().get_node("Node2D/UI/Thrust")
 export var base_pitch_scale = 0.5
 export var pitch_scale_multiplier = 2.0
 
