@@ -24,16 +24,6 @@ func _fixed_process(delta):
 	set_linear_velocity( -Vector2( sin(get_rot()) * thrust_value * LSPEED , cos(get_rot()) * thrust_value * LSPEED ) )
 	sprite.set_rot(0 + 0.05 * -get_angular_velocity())
 	
-	#var motion = velocity * delta
-	#motion = move (motion)
-	
-	
-#	if is_colliding():
-#		var normal = get_collision_normal()
-#		motion = normal.slide( motion)
-#		velocity = normal.slide (velocity)
-#		move(motion)
-#	
 func _ready():
 	# Initialization here
 	if OS.get_name() == "Android": use_accel = true
